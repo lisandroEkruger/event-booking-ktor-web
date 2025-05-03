@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crear Ticket</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body class="d-flex justify-content-center align-items-center"
+  style="min-height:100vh; background: linear-gradient(135deg, #6e7f80, #c0d6df);">
+  <div class="card p-4 shadow" style="max-width: 400px; width:100%;">
+    <h1 class="h4 text-center mb-4">Crear un nuevo Ticket</h1>
+    <form th:action="${'/ticket/create/save'}" method="post">
+      <!-- val event_id: Column<Int> = reference("event_id", Event.id_event)-->
+      <!-- val participant_id: Column<Int> = reference("participant_id", Participant.id_participant) -->
+      <div class="mb-3">
+        <label for="seatNumber" class="form-label fw-semibold">Numero de asiento</label>
+        <input type="number" id="seatNumber" name="seatNumber" class="form-control" placeholder="Escribe el nombre" required>
+      </div>
+      <div class="mb-4">
+        <label for="status" class="form-label fw-semibold">Estatus</label>
+        <input type="text" id="status" name="status" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success w-100">
+        Crear Ticket
+      </button>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+</body>
+</html>
