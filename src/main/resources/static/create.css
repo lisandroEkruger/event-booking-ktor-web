@@ -1,0 +1,83 @@
+/* Estilos generales del cuerpo de la página */
+.page-body-container {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6e7f80, #c0d6df);
+    /* Las clases de Bootstrap d-flex justify-content-center align-items-center ya manejan la alineación */
+}
+
+/* Estilos para el contenedor principal del formulario (la tarjeta) */
+.form-card-container {
+    max-width: 400px;
+    width: 100%;
+    border-radius: .75rem;
+    /* La clase 'shadow' de Bootstrap ya aplica una sombra,
+       pero si necesitas una específica, la definimos aquí.
+       Si la sombra de Bootstrap es suficiente, puedes quitar la siguiente línea. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.form-card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para el título del formulario */
+.form-title {
+    color: #0d6efd; /* Color azul primario de Bootstrap por defecto */
+    font-weight: 700;
+}
+
+/* Estilos para las etiquetas de los campos del formulario */
+.form-field-label {
+    font-size: .95rem;
+    color: #333;
+    /* fw-semibold de Bootstrap ya maneja el font-weight: 600; */
+}
+
+/* Estilos para los campos de entrada del formulario */
+.form-input-field {
+    border-radius: .375rem;
+    border: 1px solid #ced4da; /* Color de borde estándar de Bootstrap */
+    padding: .5rem .75rem;
+    transition: border-color .2s; /* Transición para el color del borde en foco, por ejemplo */
+}
+
+/* Opcional: Estilo de foco para los inputs, si lo deseas */
+.form-input-field:focus {
+    border-color: #86b7fe; /* Color de foco de Bootstrap */
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25); /* Sombra de foco de Bootstrap */
+}
+
+/* Estilos para el botón de envío del formulario */
+.submit-form-button {
+    font-size: .95rem;
+    padding: .6rem;
+    border: none; /* Los botones de Bootstrap a veces tienen borde, lo quitamos si es necesario */
+    border-radius: .375rem;
+    /* La clase btn-success ya establece un color de fondo.
+       Si quieres un color específico de base diferente al de btn-success, descomenta la siguiente línea.
+       background-color: #28a745; */
+    transition: background-color .2s, transform .2s;
+}
+
+.submit-form-button:hover {
+    background-color: #218838; /* Un verde más oscuro para el hover */
+    transform: translateY(-1px);
+}
+
+/* Si el color base de btn-success no es #28a745 y quieres ese específicamente,
+   puedes añadir esto para asegurarlo cuando no está en hover:
+.submit-form-button:not(:hover) {
+    background-color: #28a745;
+}
+   O simplemente modificar la clase .btn-success de Bootstrap si es un cambio global.
+   Por simplicidad, asumimos que el color base de btn-success es el deseado
+   y solo definimos el hover. Si el onmouseout original era para revertir
+   a un color específico que no es el default de btn-success, entonces sí necesitas
+   la regla de arriba o ajustar .submit-form-button directamente con background-color.
+   Dado que el onmouseout revertía a #28a745 (que es el color de .btn-success),
+   no es estrictamente necesario definirlo de nuevo, Bootstrap lo maneja.
+*/
